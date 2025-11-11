@@ -73,7 +73,7 @@ gsap.defaults({ ease: "none", duration: 1 });
 
 const sl = gsap.timeline();
 tl.from(".work_slider_2", { xPercent: 0 }).from(".work_slider_3", {
-  yPercent: 100,
+  xPercent: 100,
 });
 
 ScrollTrigger.create({

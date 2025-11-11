@@ -498,7 +498,7 @@ h1 {
 
 #product_page {
   max-width: 100vw;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   background-color: #343523;
   display: flex;
@@ -506,18 +506,12 @@ h1 {
   justify-content: space-around;
 }
 
-.next_section {
-  position: static;
-  z-index: 2;
-  width: 100%;
-  height: 100vh;
-  background-color: white;
-}
-
 /** slick slide section **/
 
 .work_slider {
   margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 
 .slick-slider {
@@ -568,6 +562,8 @@ h1 {
 }
 
 .work_slider .work {
+  width: auto;
+  height: 100%;
   text-align: center;
   background: gray;
   font-size: 2rem;
@@ -575,20 +571,24 @@ h1 {
   padding: 50px 0;
 }
 
-.work img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
 .work .img {
   display: block;
   width: 100%;
   height: 1000px;
-  /*   background-size: auto 100%; */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
+  overflow: scroll;
+}
+
+.work .img::-webkit-scrollbar {
+  display: none;
+}
+
+.work img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .slick-prev,
