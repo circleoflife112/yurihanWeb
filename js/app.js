@@ -65,19 +65,19 @@ ScrollTrigger.create({
   anticipatePin: 1,
 });
 
-/** SCROLL TRIGGER START **/
+/** PRODUCT PAGE SCROLL TRIGGER START **/
 
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.defaults({ ease: "none", duration: 1 });
 
 const sl = gsap.timeline();
-tl.from(".work_slider_2", { xPercent: 0 }).from(".work_slider_3", {
-  xPercent: 100,
+sl.from(".work_slider_2", { xPercent: 0 }).from(".work_slider_3", {
+  xPercent: -100,
 });
 
 ScrollTrigger.create({
-  animation: tl,
+  animation: sl,
   trigger: ".pro_part_slider",
   start: "top top",
   end: "bottom top",
