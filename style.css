@@ -32,7 +32,7 @@ a {
 /** 노멀라이즈 끝 **/
 ::-webkit-scrollbar {
   width: 5px;
-  height: 2px;
+  height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -344,10 +344,8 @@ NAVIGATION CUSTOM START **/
   max-width: 100vw;
   height: auto;
   margin: 0 auto;
+  text-align: center;
   background-color: #343523;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 h1 {
@@ -361,12 +359,13 @@ h1 {
 
 .slide_section > div {
   margin: 100px 50px;
+  margin: 0 auto;
 }
 
 .slider_wrap {
   width: 100%;
   height: 600px;
-  margin: 0;
+  margin: 0 auto;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -415,8 +414,8 @@ h1 {
     rgba(20, 25, 20, 0.7),
     rgba(25, 30, 15, 1)
   );
-  /*   
-  background-color: rgba(25, 30, 15, 0.8); */
+
+  /* background-color: rgba(25, 30, 15, 0.8); */
   border-radius: inherit;
 }
 
@@ -466,10 +465,10 @@ h1 {
   color: #009951;
 }
 
-.go_web_btn button {
-  border: none;
+.go_web_btn > a {
+  border: 1px;
   background-color: gray;
-  padding: 10px 20px;
+  padding: 3px 5px;
   border-radius: 20px;
   color: white;
   backdrop-filter: blur(1px);
@@ -477,6 +476,12 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
+}
+
+.go_web_btn > a > span {
+  font-size: 18px;
+  text-align: center;
+  align-self: center;
 }
 
 .pub_explain p {
@@ -497,8 +502,8 @@ h1 {
 /** next section custom **/
 
 .pro_part_slider {
-  max-width: 100vw;
-  height: 100%;
+  width: 100vw;
+  height: 100vh !important;
   margin: 0 auto;
   /* display: flex; */
   background-color: #343523;
@@ -512,6 +517,7 @@ h1 {
   width: 100%;
   height: 100%;
   position: absolute;
+  background-color: #343523;
   inset: 0;
 }
 
