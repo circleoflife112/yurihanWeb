@@ -11,6 +11,10 @@ window.addEventListener("scroll", function () {
   }
 });
 
+const button = document.querySelector(".slick-arrow");
+
+console.log(button);
+
 /** FIXED CONTACT BOX **/
 
 const cttBoxWrap = document.querySelector("#contact_box_wrap");
