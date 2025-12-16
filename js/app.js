@@ -20,10 +20,12 @@ console.log(button);
 const cttBoxWrap = document.querySelector("#contact_box_wrap");
 const cttBox = document.querySelector(".contact_box");
 const cttCloseBtn = document.querySelector(".contact_close_btn");
+const arrowIcon = document.getElementById("arrow-icon");
 
 function openBox() {
   cttBox.classList.toggle("active");
   cttCloseBtn.classList.toggle("btn_position");
+  arrowIcon.classList.toggle("icon-reverse");
 }
 
 cttCloseBtn.addEventListener("click", openBox);
@@ -55,9 +57,8 @@ gsap.defaults({ ease: "none", duration: 1 });
 
 const tl = gsap.timeline();
 tl.from(".slide_1", { xPercent: 0 })
-  .from(".slide_2", { xPercent: 120 })
-  .from(".slide_3", { xPercent: 200 })
-  .from(".slide_4", { xPercent: 300 });
+  .from(".slide_2", { xPercent: 110 })
+  .from(".slide_3", { xPercent: 110 });
 
 ScrollTrigger.create({
   animation: tl,

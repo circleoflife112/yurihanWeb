@@ -34,15 +34,39 @@ a {
 /** 공통 스타일 **/
 
 :root {
-  --main-color: #343523;
-  --text-color: #ffffff;
+  /* --main-color: #343523; */
+  --background-color: #f5f5f5;
+  --text-color: #000000;
+  --box-shadow: 1px 1px 10px #8cb09f;
+}
+
+[date-theme="dark"] {
+  --background-color: #343523;
+  --text-color: #f5f5f5;
+  --box-shadow: 1px 1px 10px #009951;
+}
+
+.sr-only {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
 
 /** 공통 스타일 끝 **/
 
 header,
 main {
-  background-color: var(--main-color);
+  background-color: var(--background-color);
+}
+
+h4,
+h5,
+p,
+span {
+  color: var(--text-color);
 }
 
 ::-webkit-scrollbar {
@@ -75,7 +99,7 @@ header {
 
 .main-section {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -90,7 +114,7 @@ header {
   width: 100%;
 }
 
-.main-section .title_wrap h1 {
+.main-section .title_wrap p {
   line-height: 0.6;
   text-align: right;
   font-size: 3rem;
@@ -98,6 +122,19 @@ header {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.title_wrap p:nth-child(2)::before {
+  content: "⚯";
+  transform: rotate(45deg);
+}
+
+.title_wrap p:nth-child(3)::before {
+  content: "♦︎";
+}
+
+.title_wrap p:nth-child(5)::before {
+  content: "♣︎";
 }
 
 .point_color {
@@ -146,17 +183,42 @@ header {
 }
 
 .skills-section .skills {
+  max-width: 100%;
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   text-align: center;
   margin: 30px 0;
 }
 
 .skills-section .skills li {
-  flex-grow: 1;
-  width: 100%;
+  /* flex-grow: 1; */
+  width: max-content;
+  height: auto;
+  color: #686868;
   font-size: 1.2rem;
+  font-weight: 700;
+  align-content: center;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 20px;
+
+  /** GLASS MORPHISM **/
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+    inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
+
+  /* transition */
+  transition: all 0.5s ease-out;
+}
+
+.skills-section .skills li:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #009951;
 }
 
 /** MOVING BANNER CUSTOM START **/
@@ -177,13 +239,13 @@ header {
   background-color: #009951;
 }
 
-.moving_banner > .banner_container {
+.moving_banner .banner_container {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.banner_container > .banner_wrap {
+.banner_container .banner_wrap {
   width: 100%;
   height: auto;
   display: flex;
@@ -194,14 +256,14 @@ header {
   gap: 10px;
 }
 
+.banner_container .banner_wrap span {
+  color: #f5f5f5;
+}
+
 .banner_container .banner_wrap > .diamond {
-  /* content: ""; */
   width: 20px;
   height: 20px;
   line-height: 1.5;
-  /* background-color: white; */
-  /* margin: 10px;
-  border-radius: 10px; */
 }
 
 .diamond svg {
@@ -249,7 +311,7 @@ header {
 
 NAVIGATION CUSTOM START **/
 
-#fixed_nav {
+.fixed-nav {
   position: fixed;
   top: 30px;
   left: 0px;
@@ -258,7 +320,7 @@ NAVIGATION CUSTOM START **/
   height: auto;
   display: flex;
   justify-content: space-between;
-  background-color: #343523;
+  background-color: var(--main-color);
   padding: 10px 40px;
   overflow: hidden;
 
@@ -290,7 +352,6 @@ NAVIGATION CUSTOM START **/
 
 #fixed_nav span {
   line-height: 1;
-  color: white;
 }
 
 /** FIXED NAVIGATION KEYFRAMES **/
@@ -388,7 +449,7 @@ NAVIGATION CUSTOM START **/
 
 .contact_close_btn > button {
   height: 90%;
-  background-color: #f5f5f5;
+  background-color: #009951;
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
   border: 0;
@@ -406,7 +467,45 @@ NAVIGATION CUSTOM START **/
   left: 0;
   top: 50%;
   height: 20%;
-  opacity: 0.5;
+}
+
+.icon-reverse {
+  transform: rotate(180deg);
+}
+
+/** ABOUT ME PAGE CUSTOM **/
+
+.about-me-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  margin: 20px 0;
+  padding: 40px;
+}
+
+.about-me-section h3 {
+  display: none;
+}
+
+.about-me-section .about-me-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about-me-wrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me-wrap > div {
+  flex-grow: 1;
+  flex: 1 1;
+}
+
+.about-me-wrap .introduce-part {
+  align-self: end;
 }
 
 /** SCROLL TRIGGER SECTION CUSTOM START **/
@@ -420,133 +519,38 @@ NAVIGATION CUSTOM START **/
   overflow: hidden;
 }
 
-h1 {
-  width: 100%;
-  height: auto;
-  text-align: center;
-  color: white;
-  margin: 0;
-  padding: 20px 0;
-}
-
-.slide_section > div {
-  margin: 100px 0;
-  margin: 0 auto;
+.slide_section p {
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--text-color);
 }
 
 .slider_wrap {
   width: 100%;
-  height: 600px;
-  margin: 0 auto;
+  height: 90vh;
   text-align: center;
   justify-content: center;
   align-items: center;
+  display: flex;
   position: relative;
-  background-color: #343523;
+  background-color: var(--background-color);
 }
 
-.slider_wrap > .slides {
-  max-width: 95%;
-  height: 500px;
+.slider_wrap .slides {
+  width: 95%;
+  height: 100%;
   margin: 0 auto;
+  margin-top: 30px;
   position: absolute;
   inset: 0;
-  font-size: 2rem;
-  background-color: rgba(38, 38, 20, 1);
-  box-shadow: 1px 1px 10px #009951;
-  border-radius: 30px;
-}
-
-/** each slides custom **/
-
-.pub_img {
-  width: 100%;
-  height: 100%;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  background-image: url("https://i.ifh.cc/FWNxtw.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  font-size: 2rem;
+  background-color: var(--background-color);
   border-radius: 30px;
-  padding: 30px;
-}
 
-.pub_img::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-
-  background-image: linear-gradient(
-    to bottom,
-    rgba(20, 25, 20, 0.7),
-    rgba(25, 30, 15, 1)
-  );
-
-  /* background-color: rgba(25, 30, 15, 0.8); */
-  border-radius: inherit;
-}
-
-.slide_1 > .pub_img {
-  background-image: url("https://i.ifh.cc/MH1Bbo.jpg");
-}
-
-.slide_2 > .pub_img {
-  background-image: url("https://i.ifh.cc/3G1TFL.jpg");
-}
-
-.pub_img > ul {
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.pub_img > ul > li > h4,
-.pub_img > ul > li > h5,
-.pub_img > ul > li > p {
-  margin: 5px 0;
-}
-
-.pub_img > ul > li > h4 {
-  font-size: 28px;
-  font-weight: 300;
-}
-
-.pub_txt1 > .pub_date > p {
-  color: #009951;
-  font-size: 1rem;
-}
-
-.pup_title_kr,
-.pub_explain {
-  color: #f7f7ec;
-}
-
-.pub_explain p {
-  font-size: 18px;
-}
-
-.pup_title {
-  color: #009951;
-}
-
-.go_web_btn > a {
-  display: inline-block;
-  border: 1px;
-  background-color: gray;
-  padding: 5px 10px;
-  border: solid 1px rgb(20, 20, 20);
-  border-radius: 20px;
-  font-size: 18px;
-  text-align: center;
-  color: white;
+  /** GLASS MORPHISM **/
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -554,20 +558,16 @@ h1 {
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
 }
 
-.pub_explain p {
-  font-size: 1.5rem;
-  font-weight: 300;
+.slider_wrap .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
 }
 
-.pub_txt2 > .tool > span {
-  width: 100px;
-  height: auto;
-  color: #009951;
-  font-size: 1.2rem;
-  border: 1px rgba(0, 153, 81, 1) solid;
-  padding: 5px 30px;
-  border-radius: 40px;
-}
+/** each slides custom **/
 
 /** next section custom **/
 
@@ -587,7 +587,7 @@ h1 {
   position: relative;
   inset: 0;
   padding: 100px;
-  background-color: #343523;
+  background-color: var(--background-color);
 }
 
 .slick-slider {
@@ -595,7 +595,6 @@ h1 {
   width: 100%;
   height: auto;
   overflow: auto;
-  /* border: solid 1px red; */
 }
 
 h1 {
@@ -677,4 +676,12 @@ h1 {
 .slick-next:before {
   color: #009951 !important;
   font-size: 40px !important;
+}
+
+/* FOOTER CUSTOM START */
+
+footer {
+  background-color: #009951;
+  width: 100%;
+  height: 300px;
 }
