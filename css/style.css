@@ -10,41 +10,7 @@
 
 **/
 
-/** 노멀라이즈 시작 **/
-
-* {
-  box-sizing: border-box;
-}
-
-body,
-ul,
-li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 /** 노멀라이즈 끝 **/
-
-/** 공통 스타일 **/
-
-:root {
-  /* --main-color: #343523; */
-  --background-color: #f5f5f5;
-  --text-color: #000000;
-  --box-shadow: 1px 1px 10px #8cb09f;
-}
-
-[date-theme="dark"] {
-  --background-color: #343523;
-  --text-color: #f5f5f5;
-  --box-shadow: 1px 1px 10px #009951;
-}
 
 .sr-only {
   position: absolute;
@@ -74,9 +40,9 @@ span {
   height: 0;
 }
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: #343523;
-}
+} */
 
 ::-webkit-scrollbar-thumb {
   background-color: green;
@@ -115,25 +81,25 @@ header {
 }
 
 .main-section .title_wrap p {
-  line-height: 0.6;
+  line-height: 0.2;
   text-align: right;
-  font-size: 3rem;
+  font-size: 7rem;
   font-family: "Asta Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
-.title_wrap p:nth-child(2)::before {
+.title_wrap p:nth-child(1)::before {
   content: "⚯";
   transform: rotate(45deg);
 }
 
-.title_wrap p:nth-child(3)::before {
+.title_wrap p:nth-child(2)::before {
   content: "♦︎";
 }
 
-.title_wrap p:nth-child(5)::before {
+.title_wrap p:nth-child(4)::before {
   content: "♣︎";
 }
 
@@ -146,8 +112,15 @@ header {
   height: auto;
 }
 
+.intro_wrap h3 {
+  color: var(--text-color);
+  line-height: 0.5;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
 .intro_wrap p {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 200;
   line-height: 1.5;
 }
@@ -322,6 +295,7 @@ NAVIGATION CUSTOM START **/
   justify-content: space-between;
   background-color: var(--main-color);
   padding: 10px 40px;
+  z-index: 10;
   overflow: hidden;
 
   /** GLASS MORPHISM **/
@@ -336,21 +310,27 @@ NAVIGATION CUSTOM START **/
   animation: return 1s infinite;
 }
 
-#fixed_nav .nav {
+.fixed-nav .nav {
   width: 100%;
   flex-grow: 1;
 }
 
-#fixed_nav .nav_part2 span {
+.fixed-nav h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.fixed-nav .nav_part2 span {
   color: #009951;
 }
 
-#fixed_nav .nav_part3 {
+.fixed-nav .nav_part3 {
   display: flex;
   justify-content: space-between;
 }
 
-#fixed_nav span {
+.fixed-nav span {
   line-height: 1;
 }
 
@@ -527,7 +507,7 @@ NAVIGATION CUSTOM START **/
 
 .slider_wrap {
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -541,11 +521,12 @@ NAVIGATION CUSTOM START **/
   height: 100%;
   margin: 0 auto;
   margin-top: 30px;
+  padding-bottom: 50px;
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: space-between;
   font-size: 2rem;
   background-color: var(--background-color);
   border-radius: 30px;
@@ -560,13 +541,65 @@ NAVIGATION CUSTOM START **/
 
 .slider_wrap .slides img {
   width: 100%;
-  height: 100%;
+  height: 60%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   border-radius: 30px 30px 0 0;
   overflow: hidden;
+  position: relative;
 }
 
+.slider_wrap .slides p {
+  font-size: 3.2rem;
+  line-height: 0;
+  margin: 20px;
+}
+
+.slider_wrap .slides p:nth-child(1) {
+  color: var(--point-color);
+}
+
+.slider_wrap .slides p:nth-child(3) {
+  font-weight: 200;
+  font-size: 2.8rem;
+}
+
+.slider_wrap .slides .slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider_wrap .slides .slide-content a {
+  color: var(--point-color);
+  width: max-content;
+  padding: 10px 20px;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  /** GLASS MORPHISM **/
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+    inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
+}
+
+.slider_wrap .slides ul {
+  display: flex;
+  justify-content: center;
+}
+
+.slider_wrap .slides ul li {
+  font-size: 1.4rem;
+  background-color: var(--point-color);
+  padding: 10px 25px;
+  margin: 0 10px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-weight: 700;
+}
 /** each slides custom **/
 
 /** next section custom **/
