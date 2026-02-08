@@ -6,6 +6,7 @@
   --text-color: #000000;
   --box-shadow: 1px 1px 10px #8cb09f;
   --point-color: #009951;
+  --padding: 6rem;
 }
 
 [date-theme="dark"] {
