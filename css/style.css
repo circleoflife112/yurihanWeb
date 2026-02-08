@@ -129,7 +129,6 @@ header {
 
 .skills-section {
   width: 95vw;
-  height: auto;
   margin: 0 auto;
   padding: 50px 0;
   display: flex;
@@ -143,7 +142,8 @@ header {
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
   /* overflow: hidden;
   animation: stick 1s infinite;
@@ -169,18 +169,19 @@ header {
   width: max-content;
   height: auto;
   color: #686868;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   align-content: center;
-  padding: 10px;
-  margin: 0 10px;
+  padding: 10px 20px;
+  margin: 0 20px;
   border-radius: 20px;
 
   /** GLASS MORPHISM **/
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
 
   /* transition */
@@ -302,7 +303,8 @@ NAVIGATION CUSTOM START **/
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
 
   overflow: hidden;
@@ -367,7 +369,8 @@ NAVIGATION CUSTOM START **/
   -webkit-backdrop-filter: blur(1px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 10px 5px rgba(205, 201, 193, 0.2);
   position: relative;
   overflow: hidden;
@@ -535,7 +538,8 @@ NAVIGATION CUSTOM START **/
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
 }
 
@@ -582,7 +586,8 @@ NAVIGATION CUSTOM START **/
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
 }
 
@@ -717,4 +722,11 @@ footer {
   background-color: #009951;
   width: 100%;
   height: 300px;
+}
+
+@media (min-width: 1440px) {
+  .main-section .title_wrap p {
+    line-height: 0.2;
+    font-size: 4.8rem;
+  }
 }
