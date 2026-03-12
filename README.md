@@ -2,7 +2,7 @@
 
 my web portfolio
 
-## 📁 URL Structure
+## URL Structure
 
 > `PublicLayout` (GNBLogin, 인증 불필요) / `PrivateLayout` (GNB, 인증 필요) 두 가지 레이아웃으로 분리
 
@@ -29,12 +29,9 @@ my web portfolio
 
 ---
 
-## 📡 API Endpoints
+> **Base URL** `https://api.wenivops.co.kr/services/studyin`
 
-> **Base URL** `https://api.wenivops.co.kr/services/studyin`  
-> 미인증 요청 시 `401 Unauthorized` / 권한 없는 요청 시 `403 Forbidden` 반환
-
-### 🙋 app:accounts
+### app:accounts
 
 | Endpoint           | Method | 설명                 | 로그인 | 작성자 |
 | ------------------ | ------ | -------------------- | :----: | :----: |
@@ -47,7 +44,7 @@ my web portfolio
 | `<int:pk>/`        | DELETE | 회원 탈퇴            |   ✅   |   ✅   |
 | `<int:pk>/status/` | PATCH  | 준회원 → 정회원 승급 |   ✅   |        |
 
-### 📚 app:study
+### app:study
 
 | Endpoint                 | Method | 설명           | 로그인 | 작성자 |
 | ------------------------ | ------ | -------------- | :----: | :----: |
@@ -59,7 +56,7 @@ my web portfolio
 | `studies/<int:pk>/join/` | POST   | 참가 신청      |   ✅   |        |
 | `studies/ai/`            | POST   | AI 스터디 생성 |   ✅   |        |
 
-### 💬 app:comments
+### app:comments
 
 | Endpoint                     | Method | 설명          | 로그인 | 작성자 |
 | ---------------------------- | ------ | ------------- | :----: | :----: |
@@ -70,14 +67,14 @@ my web portfolio
 | `comments/<int:pk>/reply/`   | POST   | 대댓글 작성   |   ✅   |        |
 | `comments/<int:pk>/secret/`  | PATCH  | 비밀댓글 설정 |   ✅   |   ✅   |
 
-### 🔍 app:search
+### app:search
 
 | Endpoint         | Method | 설명                                    | 로그인 | 작성자 |
 | ---------------- | ------ | --------------------------------------- | :----: | :----: |
 | `search/`        | GET    | 키워드 검색                             |   ✅   |        |
 | `search/filter/` | GET    | 필터 검색 (지역/요일/난이도/온오프라인) |   ✅   |        |
 
-### 🔔 app:notifications
+### app:notifications
 
 | Endpoint                       | Method | 설명           | 로그인 | 작성자 |
 | ------------------------------ | ------ | -------------- | :----: | :----: |
