@@ -170,7 +170,7 @@
 
       <section class="about-me-section">
         <h2 class="sr-only">자기소개 페이지</h2>
-        <p class="about-me-title">About Me</p>
+        <p class="about-me-title subtitle">About Me</p>
         <div class="about-me-wrap">
           <div class="experience-part">
             <ul>
@@ -240,7 +240,7 @@ media query와 grid 등을 스스로 터득했습니다.
 
       <section id="project" class="slide_section">
         <h2 class="sr-only">웹 퍼블리싱과 디자인</h2>
-        <div class="project_title">
+        <div class="project-title subtitle">
           <p>Web Design & Publishing</p>
         </div>
         <div class="slider_wrap">
@@ -294,7 +294,7 @@ media query와 grid 등을 스스로 터득했습니다.
       <section id="product_page" class="pro_part_slider">
         <h2 class="sr-only">경력 페이지</h2>
         <div class="work_slider work_slider_2 slick-slider">
-          <p class="sider-title">Work at Doosi</p>
+          <p class="sider-title subtitle">Work at Doosi</p>
           <div class="work_slider_wrap slick-list">
             <div class="work slick-slide">
               <img src="./images/teddy.jpg" alt="테디 해바라기 상세페이지" />
@@ -318,7 +318,7 @@ media query와 grid 등을 스스로 터득했습니다.
 
       <!-- 1108 scrollTrigger를 위해 class 수정 필요함-->
         <div class="work_slider work_slider_3 slick-slider">
-          <p class="sider-title">Work at Delma Studios</p>
+          <p class="sider-title subtitle">Work at Delma Studios</p>
           <div class="work_slider_wrap slick-list">
             <div class="work slick-slide">
               <img src="images/subs_sizeL.jpg" alt="" />
@@ -343,13 +343,21 @@ media query와 grid 등을 스스로 터득했습니다.
       <div id="contact_box_wrap">
         <h3 class="sr-only">컨텍트 박스 폼</h3>
         <form class="contact_box" action="#">
-          이름 <br />
-          <input type="text" placeholder="Write a To Do and Press Enter" required />
-            <br /> E-MAIL <br />
-            <!-- <a href="mailto:hurshoby@naver.com">test@example.com으로 이메일 보내기</a> -->
-          <input type="text" placeholder="Write a To Do and Press Enter" required />
-            <br /> COMMENT <br />
-          <input type="text" placeholder="Write a To Do and Press Enter" required />
+          <div class="contact_field">
+            <label>Your Name</label>
+            <input type="text" required />
+          </div>
+          <div class="contact_field">
+            <label>Email</label>
+            <input type="text" required />
+          </div>
+          <div class="contact_field">
+            <label>Comment</label>
+            <input type="text" required />
+          </div>
+          <div class="contact_submit">
+            <button type="submit">SEND!</button>
+          </div>
         </form>
         <div class="contact_close_btn">
           <button>
