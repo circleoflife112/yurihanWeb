@@ -58,7 +58,9 @@ gsap.defaults({ ease: "none", duration: 1 });
 const tl = gsap.timeline();
 tl.from(".slide_1", { xPercent: 0 })
   .from(".slide_2", { xPercent: 110 })
-  .from(".slide_3", { xPercent: 110 });
+  .from(".slide_3", { xPercent: 110 })
+  .from(".slide_4", { xPercent: 110 })
+  .from(".slide_5", { xPercent: 110 });
 
 ScrollTrigger.create({
   animation: tl,

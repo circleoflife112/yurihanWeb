@@ -599,7 +599,7 @@ NAVIGATION CUSTOM START **/
 
 .slide_section {
   width: 100vw;
-  height: 100%;
+  height: 120vh;
   margin: 0 auto;
   padding: 100px;
   text-align: center;
@@ -608,7 +608,7 @@ NAVIGATION CUSTOM START **/
 
 .slider_wrap {
   width: 100%;
-  height: 80vh;
+  height: 100%;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -618,27 +618,21 @@ NAVIGATION CUSTOM START **/
 }
 
 .slider_wrap .slides {
-  width: 95%;
-  height: 100%;
+  width: 80%;
+  height: auto;
   margin: 0 auto;
-  margin-top: 30px;
-  padding-bottom: 50px;
+  margin-top: 40px;
+  padding-bottom: 40px;
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 17px;
   font-size: 2rem;
-  background-color: var(--background-color);
-  border-radius: 30px;
-
-  /** GLASS MORPHISM **/
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow:
-    0 5px 5px rgba(0, 0, 0, 0.1),
-    inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .slider_wrap .slides img {
@@ -646,9 +640,13 @@ NAVIGATION CUSTOM START **/
   height: 60%;
   object-fit: cover;
   object-position: top;
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px 20px 0 0;
   overflow: hidden;
   position: relative;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 .slider_wrap .slides p {
@@ -659,17 +657,20 @@ NAVIGATION CUSTOM START **/
 
 .slider_wrap .slides p:nth-child(1) {
   color: var(--point-color);
+  font-weight: 700;
 }
 
 .slider_wrap .slides p:nth-child(3) {
-  font-weight: 200;
+  font-weight: 400;
   font-size: 2.8rem;
 }
 
 .slider_wrap .slides .slide-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .slider_wrap .slides .slide-content a {
@@ -679,29 +680,29 @@ NAVIGATION CUSTOM START **/
   margin: 0 auto;
   border-radius: 20px;
   font-size: 1.4rem;
-  font-weight: 700;
-  /** GLASS MORPHISM **/
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow:
-    0 5px 5px rgba(0, 0, 0, 0.1),
-    inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: rgba(0, 0, 0, 0.004);
+  border: 1px solid rgba(0, 153, 81, 0.2);
 }
 
 .slider_wrap .slides ul {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .slider_wrap .slides ul li {
   font-size: 1.4rem;
-  background-color: var(--point-color);
+  background: #009951;
+  border: 1px solid #009951;
   padding: 10px 25px;
-  margin: 0 10px;
   border-radius: 20px;
-  color: #ffffff;
+  color: #fefcf6;
   font-weight: 700;
+  letter-spacing: 0.01em;
 }
 /** each slides custom **/
 

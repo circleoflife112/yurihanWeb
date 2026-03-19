@@ -1,0 +1,327 @@
+/* project-card */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px 0px 50px;
+gap: 17px;
+
+position: absolute;
+width: 800px;
+height: 696px;
+left: calc(50% - 800px/2);
+top: 2923px;
+
+background: rgba(255, 255, 255, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+
+/* Frame 132 */
+
+width: 800px;
+height: 365px;
+
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bulgarianRoseMockup.jpg);
+border-radius: 20px 20px 0px 0px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Frame 131 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 469px;
+height: 152px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* - 2025 */
+
+width: 469px;
+height: 44px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 44px;
+/* identical to box height */
+text-align: center;
+
+color: #009951;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Bulgarian Rose Renewal Page */
+
+width: 469px;
+height: 44px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 44px;
+/* identical to box height */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* 불가리안로즈 리뉴얼 페이지 */
+
+width: 469px;
+height: 44px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 44px;
+/* identical to box height */
+text-align: center;
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* ABOUT ME- MOBILE */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 86px;
+height: 39px;
+
+background: rgba(0, 0, 0, 0.004);
+border: 1px solid rgba(0, 153, 81, 0.2);
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* ABOUT ME */
+
+width: 66px;
+height: 19px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+letter-spacing: 0.01em;
+
+color: #009951;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 136 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 315px;
+height: 39px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Frame 133 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 25px;
+gap: 5px;
+
+width: 99px;
+height: 39px;
+
+background: #009951;
+border: 1px solid #009951;
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* HTML5 */
+
+width: 49px;
+height: 19px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+letter-spacing: 0.01em;
+
+color: #FEFCF6;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 134 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 25px;
+gap: 5px;
+
+width: 75px;
+height: 39px;
+
+background: #009951;
+border: 1px solid #009951;
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* HTML5 */
+
+width: 25px;
+height: 19px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+letter-spacing: 0.01em;
+
+color: #FEFCF6;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 135 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 25px;
+gap: 5px;
+
+width: 121px;
+height: 39px;
+
+background: #009951;
+border: 1px solid #009951;
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* HTML5 */
+
+width: 71px;
+height: 19px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+letter-spacing: 0.01em;
+
+color: #FEFCF6;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
