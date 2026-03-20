@@ -56,11 +56,17 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.defaults({ ease: "none", duration: 1 });
 
 const tl = gsap.timeline();
-tl.from(".slide_1", { xPercent: 0 })
-  .from(".slide_2", { xPercent: 110 })
+tl.from(".slide_2", { xPercent: 110 })
+  .to(".slide_1", { xPercent: -200 }, "<")
+  .to(".slide_2", { xPercent: 0, duration: 2 }) // slide_2에서 멈춤
   .from(".slide_3", { xPercent: 110 })
+  .to(".slide_2", { xPercent: -200 }, "<")
+  .to(".slide_3", { xPercent: 0, duration: 2 }) // slide_3에서 멈춤
   .from(".slide_4", { xPercent: 110 })
-  .from(".slide_5", { xPercent: 110 });
+  .to(".slide_3", { xPercent: -200 }, "<")
+  .to(".slide_4", { xPercent: 0, duration: 2 }) // slide_4에서 멈춤
+  .from(".slide_5", { xPercent: 110 })
+  .to(".slide_4", { xPercent: -200 }, "<");
 
 ScrollTrigger.create({
   animation: tl,
@@ -76,7 +82,7 @@ ScrollTrigger.create({
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.defaults({ ease: "none", duration: 1 });
+gsap.defaults({ ease: "none", duration: 3 });
 
 const sl = gsap.timeline();
 sl.from(".work_slider_2", { yPercent: 0 }).from(".work_slider_3", {

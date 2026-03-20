@@ -6,15 +6,16 @@ flex-direction: column;
 align-items: center;
 padding: 0px 0px 50px;
 gap: 17px;
+isolation: isolate;
 
 position: absolute;
 width: 800px;
-height: 696px;
-left: calc(50% - 800px/2);
-top: 2923px;
+height: 621px;
+left: 929px;
+top: 356px;
 
 background: rgba(255, 255, 255, 0.5);
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 border-radius: 20px;
 
 
@@ -31,6 +32,27 @@ flex: none;
 order: 0;
 align-self: stretch;
 flex-grow: 0;
+z-index: 0;
+
+
+/* Frame 148 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 30px;
+
+width: 469px;
+height: 189px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
 
 
 /* Frame 131 */
@@ -40,28 +62,28 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 0px;
-gap: 10px;
+gap: 5px;
 
 width: 469px;
-height: 152px;
+height: 120px;
 
 
 /* Inside auto layout */
 flex: none;
-order: 1;
+order: 0;
 flex-grow: 0;
 
 
 /* - 2025 */
 
 width: 469px;
-height: 44px;
+height: 33px;
 
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 700;
-font-size: 32px;
-line-height: 44px;
+font-size: 24px;
+line-height: 33px;
 /* identical to box height */
 text-align: center;
 
@@ -100,13 +122,13 @@ flex-grow: 0;
 /* 불가리안로즈 리뉴얼 페이지 */
 
 width: 469px;
-height: 44px;
+height: 33px;
 
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 400;
-font-size: 32px;
-line-height: 44px;
+font-size: 24px;
+line-height: 33px;
 /* identical to box height */
 text-align: center;
 
@@ -117,53 +139,6 @@ color: #000000;
 flex: none;
 order: 2;
 align-self: stretch;
-flex-grow: 0;
-
-
-/* ABOUT ME- MOBILE */
-
-box-sizing: border-box;
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 10px;
-gap: 10px;
-
-width: 86px;
-height: 39px;
-
-background: rgba(0, 0, 0, 0.004);
-border: 1px solid rgba(0, 153, 81, 0.2);
-border-radius: 20px;
-
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 0;
-
-
-/* ABOUT ME */
-
-width: 66px;
-height: 19px;
-
-font-family: 'Open Sans';
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 19px;
-/* identical to box height */
-letter-spacing: 0.01em;
-
-color: #009951;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
 flex-grow: 0;
 
 
@@ -182,7 +157,7 @@ height: 39px;
 
 /* Inside auto layout */
 flex: none;
-order: 3;
+order: 1;
 flex-grow: 0;
 
 
@@ -319,6 +294,57 @@ line-height: 19px;
 letter-spacing: 0.01em;
 
 color: #FEFCF6;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* ABOUT ME- MOBILE */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+position: absolute;
+width: 86px;
+height: 39px;
+left: 357px;
+top: 163px;
+
+background: rgba(255, 255, 255, 0.5);
+border: 1px solid rgba(0, 153, 81, 0.2);
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+z-index: 2;
+
+
+/* ABOUT ME */
+
+width: 66px;
+height: 19px;
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 19px;
+/* identical to box height */
+letter-spacing: 0.01em;
+
+color: #009951;
 
 
 /* Inside auto layout */
