@@ -209,7 +209,7 @@ header {
   height: 30px;
   display: flex;
   overflow: hidden;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .moving_banner {
@@ -281,7 +281,7 @@ header {
 
 @keyframes rollingleft2 {
   0% {
-    transition: translateX(0);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-200%);
@@ -842,5 +842,30 @@ footer {
   .main-section .title_wrap p {
     line-height: 0.2;
     font-size: 4.8rem;
+  }
+}
+
+@media (max-width: 391px) {
+  .main-section .title_wrap p {
+    margin: 3rem 0;
+    font-size: 3.5rem;
+  }
+
+  .banner_container .banner_wrap:nth-child(n+4) {
+    display: none;
+  }
+
+  .banner_container .banner_wrap {
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .banner_container .banner_wrap > .diamond {
+    width: 14px;
+    height: 14px;
+  }
+
+  .banner_container .banner_wrap span {
+    font-size: 1.1rem;
   }
 }
