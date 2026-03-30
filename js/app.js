@@ -98,3 +98,24 @@ ScrollTrigger.create({
   pin: true,
   anticipatePin: 1,
 });
+
+/** PRODUCT PAGE1 SCROLL TRIGGER START **/
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.defaults({ ease: "none", duration: 3 });
+
+const sl1 = gsap.timeline();
+sl1.from(".v-slider-group-1", { yPercent: 0 }).from(".v-slider-group-2", {
+  yPercent: 100,
+});
+
+ScrollTrigger.create({
+  animation: sl1,
+  trigger: ".pro_part_slider1",
+  start: "top top",
+  end: "bottom top",
+  scrub: true,
+  pin: true,
+  anticipatePin: 1,
+});
