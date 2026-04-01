@@ -46,9 +46,13 @@ class InfiniteSlider {
     });
   }
 
-  /** 현재 슬라이드 너비·중심 오프셋 계산 */
+  /** 현재 슬라이드 너비·중심 오프셋 계산 (margin 포함) */
   _getMetrics() {
-    const slideWidth = this.allSlides[0].offsetWidth;
+    const slide = this.allSlides[0];
+    const style = window.getComputedStyle(slide);
+    const marginLeft = parseFloat(style.marginLeft) || 0;
+    const marginRight = parseFloat(style.marginRight) || 0;
+    const slideWidth = slide.offsetWidth + marginLeft + marginRight;
     const viewportWidth = this.viewport.offsetWidth;
     const visible = Math.max(1, Math.round(viewportWidth / slideWidth));
     const centerOffset = Math.floor(visible / 2);
