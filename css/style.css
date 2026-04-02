@@ -777,10 +777,6 @@ NAVIGATION CUSTOM START **/
   gap: 12px;
 }
 
-.v-slide {
-  box-shadow: 0 0 5px 5px rgba(205, 201, 193, 0.2);
-}
-
 .v-viewport {
   flex: 1;
   overflow: hidden;
@@ -793,7 +789,7 @@ NAVIGATION CUSTOM START **/
 
 .v-slide {
   flex: 0 0 33.333%;
-  height: 600px;
+  max-height: 550px;
   padding: 0;
   box-sizing: border-box;
   transform: scale(0.8);
@@ -801,6 +797,7 @@ NAVIGATION CUSTOM START **/
   overflow-y: auto;
   scrollbar-width: none;
   border-radius: 30px;
+  box-shadow: 0 0 5px 5px rgba(205, 201, 193, 0.2);
 }
 
 .v-slide::-webkit-scrollbar {
@@ -919,8 +916,6 @@ footer {
   .v-slide {
     flex: 0 0 calc(100% - 24px);
     height: 500px;
-    transform: scale(1);
-    opacity: 1;
     margin: 0 12px;
   }
 
