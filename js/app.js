@@ -1,4 +1,15 @@
-document.documentElement.setAttribute("data-theme", "dark");
+/** LIGHT/DARK MODE */
+
+const toggleBtn = document.getElementById("theme-toggle");
+
+toggleBtn.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute(
+    "data-theme",
+    current === "dark" ? "light" : "dark",
+  );
+});
+
 /** FIXED NAVIGATION POSITION **/
 
 let fixedNav = document.querySelector("#fixed_nav");
@@ -11,10 +22,6 @@ window.addEventListener("scroll", function () {
     fixedNav.style.animation = "return 0.5s ease-in-out";
   }
 });
-
-const button = document.querySelector(".slick-arrow");
-
-console.log(button);
 
 /** FIXED CONTACT BOX **/
 

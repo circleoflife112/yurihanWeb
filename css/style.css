@@ -82,6 +82,15 @@ header {
   padding: 40px;
 }
 
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--point-color);
+  border-radius: 20px;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .main-section .title_wrap {
   height: auto;
   width: 100%;
