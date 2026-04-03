@@ -115,7 +115,7 @@ header {
 }
 
 .intro_wrap {
-  width: 40%;
+  width: 100%;
   height: auto;
 }
 
@@ -864,6 +864,63 @@ footer {
 }
 
 @media (max-width: 768px) {
+  /** MOVING BANNER RESPONSIVE **/
+
+  .banner_container .banner_wrap:nth-child(n + 4) {
+    display: none;
+  }
+
+  .banner_container .banner_wrap {
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .banner_container .banner_wrap > .diamond {
+    width: 16px;
+    height: 16px;
+  }
+
+  .banner_container .banner_wrap span {
+    font-size: 1.5rem;
+  }
+
+  /** FIXED NAVIGATION RESPONSIVE **/
+
+  .fixed-nav {
+    padding: 10px 20px;
+  }
+
+  .fixed-nav span {
+    font-size: 1.4rem;
+  }
+
+  /** INTRO SECTION RESPONSIVE **/
+
+  .main-section {
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-section .title_wrap p {
+    text-align: center;
+    margin: 4.5rem 0;
+    font-size: 4.5rem;
+  }
+
+  .title_wrap p:nth-child(1)::before {
+    content: "";
+  }
+
+  .title_wrap p:nth-child(2)::before {
+    content: "";
+  }
+
+  .title_wrap p:nth-child(4)::before {
+    content: "";
+  }
+
+  /** SKILLS SECTION RESPONSIVE **/
+
   .skills-section {
     padding: 30px 16px;
     border-radius: 30px;
@@ -875,8 +932,8 @@ footer {
   }
 
   .skills-section .skill-li {
-    width: 130px;
-    height: 105px;
+    width: 100px;
+    height: 90px;
     padding: 16px 24px;
     border-radius: 20px;
   }
@@ -904,27 +961,37 @@ footer {
     box-sizing: border-box;
   }
 
-  .main-section .title_wrap p {
-    margin: 4.5rem 0;
-    font-size: 4.5rem;
+  /** SCROLL TRIGGER SECTION RESPONSIVE **/
+
+  .project-title {
+    margin-top: 60px;
+    font-size: 2.4rem;
   }
 
-  .banner_container .banner_wrap:nth-child(n + 4) {
-    display: none;
+  .slider_wrap .slides {
+    width: 90%;
+    height: 550px;
+    padding: 0 0 30px;
   }
 
-  .banner_container .banner_wrap {
-    width: 100%;
-    white-space: nowrap;
+  .slider_wrap .slides p:nth-child(1),
+  .slider_wrap .slides p:nth-child(3) {
+    font-size: 1.8rem;
   }
 
-  .banner_container .banner_wrap > .diamond {
-    width: 16px;
-    height: 16px;
+  .slider_wrap .slides p:nth-child(2) {
+    font-size: 2.4rem;
   }
 
-  .banner_container .banner_wrap span {
-    font-size: 1.5rem;
+  .slider_wrap .slides ul {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .slider_wrap .slides .slide-content a,
+  .slider_wrap .slides ul li {
+    font-size: 1.2rem;
+    padding: 6px 14px;
   }
 
   /** v slider responsive **/
