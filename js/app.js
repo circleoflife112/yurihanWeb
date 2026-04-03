@@ -1,3 +1,4 @@
+document.documentElement.setAttribute("data-theme", "dark");
 /** FIXED NAVIGATION POSITION **/
 
 let fixedNav = document.querySelector("#fixed_nav");
@@ -24,6 +25,7 @@ const arrowIcon = document.getElementById("arrow-icon");
 
 function openBox() {
   cttBox.classList.toggle("active");
+  cttBoxWrap.classList.toggle("wrap_closed");
   cttCloseBtn.classList.toggle("btn_position");
   arrowIcon.classList.toggle("icon-reverse");
 }
