@@ -967,6 +967,10 @@ footer {
 
   /** SCROLL TRIGGER SECTION RESPONSIVE **/
 
+  .slider_wrap {
+    overflow: hidden;
+  }
+
   .project-title {
     margin-top: 60px;
     font-size: 2.4rem;
@@ -1004,10 +1008,12 @@ footer {
     flex: 0 0 calc(100% - 24px);
     height: 500px;
     margin: 0 12px;
+    transform: none;
+    transition: none;
   }
 
   .v-slide.v-slide-active {
-    transform: scale(1);
+    transform: none;
   }
 
   .v-slider {
