@@ -12,6 +12,10 @@
 
 /** 노멀라이즈 끝 **/
 
+html {
+  scroll-behavior: smooth;
+}
+
 .sr-only {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -83,6 +87,7 @@ header {
 }
 
 #theme-toggle {
+  margin-top: 10px;
   background: none;
   border: 1px solid var(--point-color);
   border-radius: 20px;
@@ -762,7 +767,7 @@ NAVIGATION CUSTOM START **/
   width: 100%;
   height: fit-content;
   top: 0;
-  padding: 100px 0;
+  padding: 50px 0;
   background-color: var(--background-color);
 }
 
@@ -1008,6 +1013,12 @@ footer {
   .v-slider {
     padding: 20px 8px;
   }
+
+  /** CONTACT BOX RESPONSIVE **/
+
+  #contact_box_wrap {
+    width: 300px;
+  }
 }
 
 @media (max-width: 391px) {
@@ -1023,6 +1034,4 @@ footer {
   .banner_container .banner_wrap span {
     font-size: 1.1rem;
   }
-
-  /** v slider responsive **/
 }
