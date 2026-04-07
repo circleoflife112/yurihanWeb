@@ -60,65 +60,32 @@ clonedBanner.classList.add("cloned");
 
 /** SCROLL TRIGGER START **/
 
-if (window.innerWidth > 768) {
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.defaults({ ease: "none", duration: 1 });
+gsap.defaults({ ease: "none", duration: 1 });
 
-  const tl = gsap.timeline();
-  tl.from(".slide_2", { xPercent: 110 })
-    .to(".slide_1", { xPercent: -200 }, "<")
-    .to(".slide_2", { xPercent: 0, duration: 2 }) // slide_2에서 멈춤
-    .from(".slide_3", { xPercent: 110 })
-    .to(".slide_2", { xPercent: -200 }, "<")
-    .to(".slide_3", { xPercent: 0, duration: 2 }) // slide_3에서 멈춤
-    .from(".slide_4", { xPercent: 110 })
-    .to(".slide_3", { xPercent: -200 }, "<")
-    .to(".slide_4", { xPercent: 0, duration: 2 }) // slide_4에서 멈춤
-    .from(".slide_5", { xPercent: 110 })
-    .to(".slide_4", { xPercent: -200 }, "<");
+const tl = gsap.timeline();
+tl.from(".slide_2", { xPercent: 110 })
+  .to(".slide_1", { xPercent: -200 }, "<")
+  .to(".slide_2", { xPercent: 0, duration: 2 }) // slide_2에서 멈춤
+  .from(".slide_3", { xPercent: 110 })
+  .to(".slide_2", { xPercent: -200 }, "<")
+  .to(".slide_3", { xPercent: 0, duration: 2 }) // slide_3에서 멈춤
+  .from(".slide_4", { xPercent: 110 })
+  .to(".slide_3", { xPercent: -200 }, "<")
+  .to(".slide_4", { xPercent: 0, duration: 2 }) // slide_4에서 멈춤
+  .from(".slide_5", { xPercent: 110 })
+  .to(".slide_4", { xPercent: -200 }, "<");
 
-  ScrollTrigger.create({
-    animation: tl,
-    trigger: ".slide_section",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-    pin: true,
-    anticipatePin: 1,
-  });
-} else {
-  /** MOBILE SWIPE FOR #project **/
-  const slides = Array.from(document.querySelectorAll(".slider_wrap .slides"));
-  let current = 0;
-
-  slides.forEach((slide, i) => {
-    slide.style.transition = "transform 0.35s ease";
-    slide.style.transform = i === 0 ? "translateX(0)" : "translateX(100%)";
-  });
-
-  let startX = 0;
-  const sliderWrap = document.querySelector(".slider_wrap");
-
-  sliderWrap.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-
-  sliderWrap.addEventListener("touchend", (e) => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) < 50) return;
-
-    if (diff > 0 && current < slides.length - 1) {
-      slides[current].style.transform = "translateX(-100%)";
-      current++;
-      slides[current].style.transform = "translateX(0)";
-    } else if (diff < 0 && current > 0) {
-      slides[current].style.transform = "translateX(100%)";
-      current--;
-      slides[current].style.transform = "translateX(0)";
-    }
-  }, { passive: true });
-}
+ScrollTrigger.create({
+  animation: tl,
+  trigger: ".slide_section",
+  start: "top top",
+  end: "bottom top",
+  scrub: true,
+  pin: true,
+  anticipatePin: 1,
+});
 
 /** PRODUCT PAGE SCROLL TRIGGER START **/
 
