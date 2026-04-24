@@ -106,12 +106,8 @@ header {
   content: "♦︎";
 }
 
-.title_wrap p:nth-child(4)::before {
+.title_wrap p:nth-child(5)::before {
   content: "♣︎";
-}
-
-.main-section .title_wrap .point_color_wrap {
-  display: flex;
 }
 
 .point_color {
@@ -119,7 +115,8 @@ header {
 }
 
 .main-section .title_wrap .yurihan_name {
-  font-size: 2rem;
+  color: var(--point-color);
+  font-size: 4rem;
 }
 
 .intro_wrap {
