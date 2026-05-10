@@ -529,28 +529,19 @@ NAVIGATION CUSTOM START **/
   margin-bottom: 30px;
 }
 
-.about-me-wrap {
+.experience-part {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
-.about-me-wrap > div {
-  flex-grow: 1;
-  flex: 1 1;
-}
-
-.about-me-wrap .introduce-part {
-  align-self: end;
-}
-
-.experience-part ul,
-.introduce-part ul {
+.experience-part ul {
   padding: 20px 24px;
-  margin: 10px 0;
   border-radius: 16px;
+  flex: 1 1 calc(50% - 10px);
 
   background: linear-gradient(
     135deg,
@@ -572,16 +563,14 @@ NAVIGATION CUSTOM START **/
     box-shadow 0.3s ease;
 }
 
-.experience-part ul:hover,
-.introduce-part ul:hover {
+.experience-part ul:hover {
   transform: translateY(-4px);
   box-shadow:
     0 10px 28px rgba(0, 0, 0, 0.12),
     inset 0 0 10px 4px rgba(205, 201, 193, 0.2);
 }
 
-.experience-part ul h4,
-.introduce-part ul h4 {
+.experience-part ul h4 {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--point-color);
@@ -591,8 +580,7 @@ NAVIGATION CUSTOM START **/
     color-mix(in srgb, var(--point-color) 20%, transparent);
 }
 
-.experience-part ul li,
-.introduce-part ul li {
+.experience-part ul li {
   margin: 6px 0;
   line-height: 1.6;
 }
