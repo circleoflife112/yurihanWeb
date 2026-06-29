@@ -1,0 +1,435 @@
+/* ══ VARIABLES (root.css 기반) ══ */
+:root {
+  --bg: var(--background-color);   /* #fefcf6 크림 배경 */
+  --bg2: #eae7d6;                  /* 이미지 없는 프레임 배경 */
+  --border: rgba(0, 0, 0, 0.1);    /* 섬세한 구분선 */
+  --fg: var(--text-color);         /* #000000 메인 텍스트 */
+  --fg2: #3c3a26;                  /* 보조 텍스트 (웜 다크) */
+  --fg3: #8a8870;                  /* 3차 텍스트 (뮤트) */
+  --lime-text: #5e7800;            /* point-color(#d6e796)의 어두운 버전 — 라이트 bg 텍스트용 */
+}
+
+/* ══ FONT ══ */
+@font-face {
+  font-family: "Zen Serif";
+  src: url("../fonts/ZEN-SERIF-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ══ BASE ══ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.wrap {
+  width: 100%;
+  height: 100vh;
+  min-height: 580px;
+  background: var(--bg);
+  display: flex;
+  align-items: stretch;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+/* ══ LEFT ══ */
+.left {
+  width: 32%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 28px 36px 36px;
+  position: relative;
+  z-index: 2;
+}
+.left::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--border),
+    transparent
+  );
+}
+.brand {
+  font-family: "Zen Serif", serif;
+  font-size: 13px;
+  color: var(--fg2);
+  letter-spacing: 0.06em;
+}
+.brand span {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+  letter-spacing: 0.22em;
+  color: var(--fg3);
+  margin-top: 3px;
+}
+.title-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--lime-text);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.title-main {
+  font-family: "Zen Serif", serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--fg);
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+.title-main em {
+  font-style: italic;
+  color: var(--lime-text);
+}
+.title-desc {
+  font-size: 11px;
+  color: var(--fg2);
+  line-height: 1.8;
+  font-weight: 300;
+}
+.tag-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.tag-item {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--fg3);
+}
+
+/* ══ RIGHT AREA ══ */
+.right-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 백그라운드 이미지 프레임 */
+.bg-frame {
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+}
+.bg-frame::-webkit-scrollbar {
+  display: none;
+}
+.bg-frame img {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: block;
+  object-position: top center;
+}
+.bg-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 26, 20, 0.04),
+    transparent 30%,
+    transparent 70%,
+    rgba(26, 26, 20, 0.04)
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+.bg-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 20, 0.4);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+.bg-frame:hover::after {
+  opacity: 0;
+}
+.bg-frame img[src=""],
+.bg-frame img:not([src]) {
+  display: none;
+}
+.bg-num {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.55); /* 다크 오버레이 위 → 밝은 색 고정 */
+  letter-spacing: 0.1em;
+  font-family: "Noto Sans KR", sans-serif;
+  pointer-events: none;
+  z-index: 2;
+}
+.bg-guide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  pointer-events: none;
+  z-index: 2;
+}
+.bg-guide-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px dashed rgba(200, 232, 122, 0.4); /* 다크 오버레이 위 → 밝은 라임 고정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: rgba(200, 232, 122, 0.7); /* 다크 오버레이 위 → 밝은 라임 고정 */
+}
+.bg-guide-text {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.4); /* 다크 오버레이 위 → 밝은 색 고정 */
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.6;
+}
+.bg-frame.filled .bg-guide {
+  display: none;
+}
+
+/* ══ 폰 목업 ══ */
+.phone-zone {
+  position: absolute;
+  z-index: 20;
+}
+.phone-zone::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 232, 122, 0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.phone-wrap {
+  filter: drop-shadow(0 24px 64px rgba(0, 0, 0, 0.55));
+}
+.phone-outer {
+  width: 350px;
+  height: 700px;
+  background: linear-gradient(160deg, #2a2420, #0f0d08);
+  border-radius: 44px;
+  padding: 11px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.phone-outer::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 80px;
+  width: 3px;
+  height: 27px;
+  background: #0f0d08;
+  border-radius: 3px 0 0 3px;
+  box-shadow:
+    0 38px 0 #0f0d08,
+    0 76px 0 #0f0d08;
+}
+.phone-outer::after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 100px;
+  width: 3px;
+  height: 46px;
+  background: #0f0d08;
+  border-radius: 0 3px 3px 0;
+}
+.phone-inner {
+  background: #0c0b08;
+  height: 100%;
+  border-radius: 34px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 상태바 */
+.phone-statusbar {
+  height: 38px;
+  background: #0c0b08;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 16px 5px;
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
+}
+.sb-r {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+/* 다이나믹 아일랜드 */
+.di {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 20px;
+  background: #0c0b08;
+  border-radius: 100px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 7px;
+  gap: 4px;
+}
+.di-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #0a180a;
+  opacity: 0.8;
+}
+.di-cam {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #1a1a28, #000);
+  border: 1px solid #1e1e1e;
+}
+
+/* 스크롤 영역 */
+.phone-scroll {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.phone-scroll::-webkit-scrollbar {
+  display: none;
+}
+.phone-scroll img {
+  width: 100%;
+  display: block;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* 이미지 없을 때 플레이스홀더 */
+.phone-placeholder {
+  height: 460px;
+  background: #1a1612;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.phone-scroll:has(img[src]) .phone-placeholder,
+.phone-scroll img[src]:not([src=""]) ~ .phone-placeholder {
+  display: none;
+}
+.pp-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px dashed rgba(200, 232, 122, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: rgba(200, 232, 122, 0.5);
+}
+.pp-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  line-height: 1.9;
+}
+.pp-label code {
+  display: block;
+  font-size: 8px;
+  color: rgba(200, 232, 122, 0.4);
+  font-family: monospace;
+  margin-top: 4px;
+  letter-spacing: 0;
+}
+
+/* 홈바 */
+.hb-wrap {
+  height: 22px;
+  background: #0c0b08;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hb {
+  width: 64px;
+  height: 3px;
+  background: #fff;
+  border-radius: 100px;
+  opacity: 0.1;
+}
+
+/* 워터마크 */
+.watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  text-align: right;
+  pointer-events: none;
+}
+.watermark span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.5); /* 다크 프레임 위 → 밝은 색 고정 */
+}
+.watermark strong {
+  font-family: "Zen Serif", serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.2); /* 다크 프레임 위 → 밝은 색 고정 */
+  font-weight: 400;
+}

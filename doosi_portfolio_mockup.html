@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Doosi — Portfolio</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/root.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/mockup-common.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* 백그라운드 이미지 4칸 */
+      .bg-grid {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: grid;
+        grid-template-columns: 350px 350px;
+        grid-template-rows: 500px 500px;
+        gap: 3px;
+        padding: 16px 16px 16px 12px;
+      }
+
+      /* 폰 목업 위치 */
+      .phone-zone {
+        left: 30%;
+        top: 50%;
+        transform: translate(-58%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- ── LEFT ── -->
+      <div class="left">
+        <div class="brand">Doosi.<span>Product Detail Page Design</span></div>
+        <div>
+          <div class="title-eyebrow">PRODUCT DETAIL PAGE</div>
+          <div class="title-main">
+            Flower Shop<br /><em>Detail</em><br />Page.
+          </div>
+          <div class="title-desc">
+            모바일 커머스 상세페이지<br />기획 및 상세페이지 디자인<br />adobe
+            photoshop, adobe illustrator, imweb
+          </div>
+        </div>
+        <div class="tag-row">
+          <div class="tag-item">Visual Design</div>
+          <div class="tag-item">Brand Identity</div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT AREA ── -->
+      <div class="right-area">
+        <!-- 백그라운드 이미지 4칸 -->
+        <!-- ★ src="" 에 이미지 경로를 넣으세요. 예: src="detail_01.jpg" -->
+        <div class="bg-grid">
+          <div class="bg-frame" id="bf1">
+            <div class="bg-num">01</div>
+            <img
+              src="images/doosi-mockup/100thflowerbouquet.jpg"
+              alt="상세페이지 01"
+              onerror="this.style.display = 'none'"
+              onload="this.closest('.bg-frame').classList.add('filled')"
+            />
+            <div class="bg-guide">
+              <div class="bg-guide-icon">+</div>
+              <div class="bg-guide-text">src="" 에<br />이미지 경로 입력</div>
+            </div>
+          </div>
+
+          <div class="bg-frame" id="bf2">
+            <div class="bg-num">02</div>
+            <img
+              src="images/doosi-mockup/101stflowerbouquet.jpg"
+              alt="상세페이지 02"
+              onerror="this.style.display = 'none'"
+              onload="this.closest('.bg-frame').classList.add('filled')"
+            />
+            <div class="bg-guide">
+              <div class="bg-guide-icon">+</div>
+              <div class="bg-guide-text">src="" 에<br />이미지 경로 입력</div>
+            </div>
+          </div>
+
+          <div class="bg-frame" id="bf3">
+            <div class="bg-num">03</div>
+            <img
+              src="images/doosi-mockup/freesia.jpg"
+              alt="상세페이지 03"
+              onerror="this.style.display = 'none'"
+              onload="this.closest('.bg-frame').classList.add('filled')"
+            />
+            <div class="bg-guide">
+              <div class="bg-guide-icon">+</div>
+              <div class="bg-guide-text">src="" 에<br />이미지 경로 입력</div>
+            </div>
+          </div>
+
+          <div class="bg-frame" id="bf4">
+            <div class="bg-num">04</div>
+            <img
+              src="images/doosi-mockup/teddysunflower.jpg"
+              alt="상세페이지 04"
+              onerror="this.style.display = 'none'"
+              onload="this.closest('.bg-frame').classList.add('filled')"
+            />
+            <div class="bg-guide">
+              <div class="bg-guide-icon">+</div>
+              <div class="bg-guide-text">src="" 에<br />이미지 경로 입력</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 폰 목업 -->
+        <div class="phone-zone">
+          <div class="phone-wrap">
+            <div class="phone-outer">
+              <div class="phone-inner">
+                <div class="di">
+                  <div class="di-dot"></div>
+                  <div class="di-cam"></div>
+                </div>
+                <div class="phone-statusbar">
+                  <span>9:41</span>
+                  <div class="sb-r"><span>●●●</span><span>🔋</span></div>
+                </div>
+
+                <!-- ★ 스크롤 영역 — src="" 에 이미지 경로 입력 -->
+                <div class="phone-scroll">
+                  <img
+                    src="images/doosi-mockup/subscriptionL.jpg"
+                    alt="모바일 상세페이지"
+                    onerror="this.style.display = 'none'"
+                  />
+                  <div class="phone-placeholder">
+                    <div class="pp-icon">📱</div>
+                    <div class="pp-label">
+                      아래 img 태그의<br />src="" 에 경로 입력
+                      <code>&lt;img src="detail.jpg"&gt;</code>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hb-wrap"><div class="hb"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="watermark"><span>2024 F/W</span><strong>DELMA</strong></div>
+      </div>
+    </div>
+  </body>
+</html>
