@@ -64,6 +64,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.defaults({ ease: "none", duration: 1 });
 
+/** HERO: main-section 고정 → slogan-section이 50% 위치까지 올라옴 **/
+ScrollTrigger.create({
+  trigger: ".pin-wrapper",
+  start: "top top",
+  end: "+=50%",         /* 50vh 스크롤 동안 고정 */
+  pin: ".main-section",
+  pinSpacing: false,    /* spacer 없이 → slogan이 자연스럽게 올라옴 */
+  anticipatePin: 1,
+});
+
 const tl = gsap.timeline();
 tl.from(".slide_2", { xPercent: 110 })
   .to(".slide_1", { xPercent: -200 }, "<")

@@ -1,3 +1,95 @@
+/* 글꼴 */
+
+@font-face {
+  font-family: "PyeongchangPeace";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PyeongchangPeace";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2")
+    format("woff2");
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2")
+    format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-display: swap;
+}
+
+/** SERIF 글꼴 **/
+
 html {
   scroll-behavior: smooth;
 }
@@ -60,16 +152,91 @@ header {
   position: relative;
 }
 
+.pin-wrapper {
+  position: relative;
+}
+
 .main-section {
+  position: relative;
   width: 100%;
-  min-height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  overflow: hidden;
   align-items: end;
-  text-align: right;
   color: #f5f5f5;
-  padding: 40px;
+  padding: var(--padding);
+  z-index: 1;
+}
+
+.main-section::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/yurihantitle.png") no-repeat center / 100% auto;
+  background-position: bottom;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-section .profile-section {
+  display: flex;
+  height: auto;
+  align-items: flex-start;
+  padding-top: 100px;
+  gap: 20px;
+}
+
+.main-section .profile-section .title_wrap {
+  height: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.main-section .profile-section .title_wrap p {
+  line-height: 1.1;
+  text-align: right;
+  font-size: 6rem;
+  font-family: "pretendard", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0;
+}
+
+.main-section .profile-section .en p:nth-child(3) {
+  position: relative;
+  transition: color 0.4s ease;
+  font-style: italic;
+  font-family: "playfair display", serif;
+  font-weight: 100;
+}
+
+.main-section .profile-section .en p:nth-child(3)::after {
+  content: "yurihan";
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--point-color);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-style: italic;
+}
+
+.main-section .profile-section .en p:nth-child(3):hover {
+  color: transparent;
+}
+
+.main-section .profile-section .en p:nth-child(3):hover::after {
+  opacity: 1;
+}
+
+.main-section .profile-section .kr p {
+  font-weight: 300;
 }
 
 #theme-toggle {
@@ -82,45 +249,35 @@ header {
   cursor: pointer;
 }
 
-.main-section .title_wrap {
-  height: auto;
-  width: 100%;
-}
-
-.main-section .title_wrap p {
-  line-height: 0.2;
-  text-align: right;
-  font-size: 7rem;
-  font-family: "Asta Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .point_color {
   color: var(--point-color);
 }
 
-.main-section .title_wrap .yurihan_name {
-  color: var(--point-color);
+/** SLOGAN SECTION CUSTOM START **/
+
+.slogan-section {
+  position: relative;
+  z-index: 2;
+  min-height: 70vh;
+  border-top: 1px solid #000000;
+  padding: var(--padding);
+  background-color: var(--background-color);
 }
 
-.intro_wrap {
+.slogan-content {
   width: 100%;
-  height: auto;
+  font-size: 4.2rem;
 }
 
-.intro_wrap h3 {
-  color: var(--text-color);
-  line-height: 0.5;
+.slogan-content em {
+  font-family: "playfair display", serif;
+  font-weight: 700;
+}
+
+.slogan-section .kr {
   font-size: 2.4rem;
-  font-weight: 500;
-}
-
-.intro_wrap p {
-  font-size: 1.8rem;
-  font-weight: 200;
-  line-height: 1.5;
+  font-weight: 300;
+  margin-top: 20px;
 }
 
 /** SKILLS SECTION CUSTOM START **/
@@ -363,6 +520,7 @@ NAVIGATION CUSTOM START **/
   display: flex;
   top: 40vh;
   left: 40px;
+  z-index: 5;
 }
 
 .contact_box {
