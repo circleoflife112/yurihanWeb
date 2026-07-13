@@ -169,17 +169,98 @@ header {
   z-index: 1;
 }
 
+@keyframes textRevealUp {
+  from {
+    clip-path: inset(110% 0 -10% 0);
+  }
+  to {
+    clip-path: inset(0% 0 0% 0);
+  }
+}
+
+@keyframes textSwapMain {
+  0%,
+  33% {
+    color: var(--text-color);
+  }
+  42%,
+  75% {
+    color: transparent;
+  }
+  83%,
+  100% {
+    color: var(--text-color);
+  }
+}
+
+@keyframes textSwapAfter {
+  0%,
+  33% {
+    opacity: 0;
+  }
+  42%,
+  75% {
+    opacity: 1;
+  }
+  83%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fallBounce {
+  0% {
+    transform: translateY(-900px) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  42% {
+    transform: translateY(0px) rotate(0deg);
+    animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
+  }
+  48% {
+    transform: translateY(0px) rotate(-4deg);
+  }
+  58% {
+    transform: translateY(-55px) rotate(3deg);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  68% {
+    transform: translateY(10px) rotate(-2deg);
+    animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
+  }
+  74% {
+    transform: translateY(-18px) rotate(1.5deg);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  82% {
+    transform: translateY(20px) rotate(-0.8deg);
+    animation-timing-function: cubic-bezier(0, 0.6, 0.4, 1);
+  }
+  88% {
+    transform: translateY(-5px) rotate(0.4deg);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  94% {
+    transform: translateY(10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
 .main-section::after {
   content: "";
   position: absolute;
-  bottom: 10px;
+  bottom: 10%;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../images/yurihantitle.png") no-repeat center / 100% auto;
+  background: url("../images/yurihantitle.png") no-repeat center / 95% auto;
   background-position: bottom;
   z-index: 0;
   pointer-events: none;
+  transform-origin: center bottom;
+  animation: fallBounce 2.2s forwards;
 }
 
 .main-section .profile-section {
@@ -206,14 +287,42 @@ header {
   font-weight: 500;
   font-style: normal;
   margin: 0;
+  animation: textRevealUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* en 컬럼 (왼쪽) */
+.main-section .profile-section .en p:nth-child(1) {
+  animation-delay: 2.4s;
+}
+.main-section .profile-section .en p:nth-child(2) {
+  animation-delay: 2.6s;
+}
+.main-section .profile-section .en p:nth-child(4) {
+  animation-delay: 3s;
+}
+
+/* kr 컬럼 (오른쪽) */
+.main-section .profile-section .kr p:nth-child(1) {
+  animation-delay: 3.2s;
+}
+.main-section .profile-section .kr p:nth-child(2) {
+  animation-delay: 3.4s;
+}
+.main-section .profile-section .kr p:nth-child(3) {
+  animation-delay: 3.6s;
+}
+.main-section .profile-section .kr p:nth-child(4) {
+  animation-delay: 3.8s;
 }
 
 .main-section .profile-section .en p:nth-child(3) {
   position: relative;
-  transition: color 0.4s ease;
   font-style: italic;
   font-family: "playfair display", serif;
   font-weight: 100;
+  animation:
+    textRevealUp 0.65s 2.8s cubic-bezier(0.22, 1, 0.36, 1) both,
+    textSwapMain 3s 5s ease-in-out infinite;
 }
 
 .main-section .profile-section .en p:nth-child(3)::after {
@@ -223,16 +332,8 @@ header {
   right: 0;
   color: var(--point-color);
   opacity: 0;
-  transition: opacity 0.4s ease;
   font-style: italic;
-}
-
-.main-section .profile-section .en p:nth-child(3):hover {
-  color: transparent;
-}
-
-.main-section .profile-section .en p:nth-child(3):hover::after {
-  opacity: 1;
+  animation: textSwapAfter 3s 5s ease-in-out infinite;
 }
 
 .main-section .profile-section .kr p {
