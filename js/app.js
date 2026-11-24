@@ -58,6 +58,14 @@ document.querySelector("#banner2").style.left =
 rollingBanner.classList.add("original");
 clonedBanner.classList.add("cloned");
 
+/** SKILLS MARQUEE START **/
+
+let skillsUl = document.querySelector(".skills");
+let clonedSkills = skillsUl.cloneNode(true);
+document.querySelector(".skills-wrapper").appendChild(clonedSkills);
+
+/** SKILLS MARQUEE END **/
+
 /** SCROLL TRIGGER START **/
 
 gsap.registerPlugin(ScrollTrigger);
@@ -68,9 +76,9 @@ gsap.defaults({ ease: "none", duration: 1 });
 ScrollTrigger.create({
   trigger: ".pin-wrapper",
   start: "top top",
-  end: "+=50%",         /* 50vh 스크롤 동안 고정 */
+  end: "+=50%" /* 50vh 스크롤 동안 고정 */,
   pin: ".main-section",
-  pinSpacing: false,    /* spacer 없이 → slogan이 자연스럽게 올라옴 */
+  pinSpacing: false /* spacer 없이 → slogan이 자연스럽게 올라옴 */,
   anticipatePin: 1,
 });
 
@@ -85,7 +93,11 @@ tl.from(".slide_2", { xPercent: 110 })
   .to(".slide_3", { xPercent: -200 }, "<")
   .to(".slide_4", { xPercent: 0, duration: 2 }) // slide_4에서 멈춤
   .from(".slide_5", { xPercent: 110 })
-  .to(".slide_4", { xPercent: -200 }, "<");
+  .to(".slide_4", { xPercent: -200 }, "<")
+  .to(".slide_5", { xPercent: 0, duration: 2 }) // slide_5에서 멈춤
+  .from(".slide_6", { xPercent: 110 })
+  .to(".slide_5", { xPercent: -200 }, "<")
+  .to(".slide_6", { xPercent: 0, duration: 2 }); // slide_6에서 멈춤
 
 ScrollTrigger.create({
   animation: tl,
@@ -137,4 +149,24 @@ ScrollTrigger.create({
   scrub: true,
   pin: true,
   anticipatePin: 1,
+});
+
+/** SCROLL FADE-IN ANIMATION **/
+
+[
+  { trigger: ".slogan-section", target: ".slogan-content", stagger: 0.2 },
+  { trigger: ".about-me-section", target: ".experience-part ul", stagger: 0.2 },
+].forEach(({ trigger, target, stagger }) => {
+  gsap.from(target, {
+    scrollTrigger: {
+      trigger,
+      start: "top 80%",
+      toggleActions: "play none none reset",
+    },
+    y: 60,
+    opacity: 0,
+    duration: 0.9,
+    ease: "power3.out",
+    stagger,
+  });
 });

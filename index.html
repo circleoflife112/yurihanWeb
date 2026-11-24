@@ -113,8 +113,8 @@
 
     <main>
 <!-- MAIN SECTION -->
- <div class="pin-wrapper">
-  <section id="main_page" class="main-section">
+  <div class="pin-wrapper">
+    <section id="main_page" class="main-section">
         <h2 class="sr-only">한유리 포트폴리오 히어로페이지</h2>
         <button id="theme-toggle">DARK / LIGHT Mode</button>
         <div class="profile-section">
@@ -132,7 +132,7 @@
           </div>
         </div>
       </section>
- </div>
+  </div>
       
 
       
@@ -145,9 +145,10 @@ I will build a pleasant and seamless website.</p>
       </section>
 
       <section class="skills-section">
-        <h2>Skills</h2>
-        <ul class="skills">
-          <li class="skill-li">
+        <h2 class="sr-only">"Skills</h2>
+        <div class="skills-wrapper">
+          <ul class="skills">
+            <li class="skill-li">
             <img src="./images/icons/html5.svg" alt="HTML5" class="skill-icon">
             <span>HTML5</span>
           </li>
@@ -190,6 +191,7 @@ I will build a pleasant and seamless website.</p>
               Illustrator</span>
           </li>
         </ul>
+      </div>
       </section>
 
       <section id="about-me" class="about-me-section">
@@ -268,14 +270,40 @@ JavaScript와 CSS Grid, Media Query를 독학으로 익히며 실력을 쌓았�
 
       <!-- SCROLL TRIGGER SECTION START -->
 
-      <div class="project-title subtitle">
+      <!-- <div class="project-title subtitle">
           <h2 class="subtitle">Web Design & Publishing</h2>
-        </div>
+        </div> -->
 
       <section id="project" class="slide_section">
-        <h2 class="sr-only">웹 퍼블리싱과 디자인</h2>
+        <h2 class="subtitle">Web Design & Publishing</h2>
         <div class="slider_wrap">
           <div class="slides slide_1">
+            <img src="./images/webp/mappin-img.webp" alt="매핀" loading="lazy">
+            <div class="sticker-wrapper">
+              <div class="sticker sticker-design">
+                <img src="public/sticker.svg" alt="" class="sticker-img">
+              </div>
+              <div class="sticker sticker-code">
+                <img src="public/sticker.svg" alt="" class="sticker-img">
+              </div>
+            </div>
+            <div class="slide-content">
+              <p>2026</p>
+              <p>mappin</p>
+              <p>약속 잡을 땐 '매핀' 지도 앱 프로젝트</p>
+              <div class="link-wrapper">
+                <a href="https://mappin-chi.vercel.app">VISIT SITE</a>
+                <!-- <a href="https://github.com/3rd-study-in/stydyIn">GitHub</a> -->
+              </div>
+            </div>
+            <ul class="tool-box">
+              <li>claude</li>
+              <li>React</li>
+              <li>javaScript</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+          <div class="slides slide_2">
             <img src="./images/webp/studyIn_mockup.webp" alt="스터디 인" loading="lazy">
             <div class="sticker-wrapper">
               <div class="sticker sticker-team">
@@ -301,7 +329,7 @@ JavaScript와 CSS Grid, Media Query를 독학으로 익히며 실력을 쌓았�
               <li>Tailwind CSS</li>
             </ul>
           </div>
-          <div class="slides slide_2">
+          <div class="slides slide_3">
             <img src="./images/webp/hodumarket_mockup.webp" alt="호두 마켓" loading="lazy">
             <div class="sticker-wrapper">
               <div class="sticker sticker-team">
@@ -327,7 +355,7 @@ JavaScript와 CSS Grid, Media Query를 독학으로 익히며 실력을 쌓았�
               <li>CSS</li>
             </ul>
           </div>
-          <div class="slides slide_3">
+          <div class="slides slide_4">
             <img src="./images/webp/bulgarianRoseMockup.webp" alt="불가리안로즈 목업" loading="lazy">
             <div class="sticker-wrapper">
               <div class="sticker sticker-design">
@@ -352,7 +380,7 @@ JavaScript와 CSS Grid, Media Query를 독학으로 익히며 실력을 쌓았�
               <li>javaScript</li>
             </ul>
           </div>
-          <div class="slides slide_4">
+          <div class="slides slide_5">
             <img src="./images/webp/momentomMockup.webp" alt="구글 모멘텀 목업" loading="lazy">
             <div class="slide-content">
               <p>2024</p>
@@ -368,7 +396,7 @@ JavaScript와 CSS Grid, Media Query를 독학으로 익히며 실력을 쌓았�
               <li>javaScript</li>
             </ul>
           </div>
-          <div class="slides slide_5">
+          <div class="slides slide_6">
             <img src="./images/webp/sinhancard_mockup.webp" alt="신한카드 목업" loading="lazy">
             <div class="slide-content">
               <p>2023</p>
