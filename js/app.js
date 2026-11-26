@@ -2,13 +2,15 @@
 
 const toggleBtn = document.getElementById("theme-toggle");
 
-toggleBtn.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme");
-  document.documentElement.setAttribute(
-    "data-theme",
-    current === "dark" ? "light" : "dark",
-  );
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    document.documentElement.setAttribute(
+      "data-theme",
+      current === "dark" ? "light" : "dark",
+    );
+  });
+}
 
 /** FIXED NAVIGATION POSITION **/
 

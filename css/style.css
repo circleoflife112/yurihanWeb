@@ -159,7 +159,6 @@ header {
   flex-direction: column;
   overflow: hidden;
   align-items: end;
-  color: #f5f5f5;
   padding: var(--padding);
   z-index: 1;
 }
@@ -262,7 +261,7 @@ header {
   display: flex;
   min-height: 50dvh;
   align-items: flex-start;
-  padding-top: 50px;
+  margin-top: 10vh;
   gap: 20px;
 }
 
@@ -354,15 +353,15 @@ header {
 .slogan-section {
   position: relative;
   z-index: 2;
-  min-height: 60vh;
-  border-top: 1px solid #000000;
+  min-height: 50dvh;
+  /* border-top: 1px solid #000000; */
   padding: var(--padding);
   background-color: var(--background-color);
 }
 
 .slogan-content {
   width: 100%;
-  font-size: 4.2rem;
+  font-size: var(--subtitle-font-size);
 }
 
 .slogan-content em {
@@ -371,7 +370,7 @@ header {
 }
 
 .slogan-section .kr {
-  font-size: 2.4rem;
+  font-size: var(--content-font-size);
   font-weight: 300;
   margin-top: 20px;
 }
@@ -576,6 +575,25 @@ NAVIGATION CUSTOM START **/
   padding: 10px 40px;
   z-index: 10;
   overflow: hidden;
+  animation: stick 1s infinite;
+  animation: return 1s infinite;
+}
+
+.fixed-nav .nav {
+  width: auto;
+  display: flex;
+  gap: 10px;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.fixed-nav .nav li {
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
 
   /** GLASS MORPHISM **/
   backdrop-filter: blur(1px);
@@ -584,21 +602,22 @@ NAVIGATION CUSTOM START **/
   box-shadow:
     0 5px 5px rgba(0, 0, 0, 0.1),
     inset 0 0 5px 5px rgba(205, 201, 193, 0.2);
-
-  overflow: hidden;
-  animation: stick 1s infinite;
-  animation: return 1s infinite;
-}
-
-.fixed-nav .nav {
-  width: 100%;
-  flex-grow: 1;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--point-color) 6%, transparent) 0%,
+    rgba(52, 53, 35, 0.04) 100%
+  );
 }
 
 .fixed-nav h1 {
-  margin: 0;
-  font-size: 1.1rem;
+  margin: auto;
+  font-size: 1.2rem;
   text-align: left;
+}
+
+.fixed-nav h1 img {
+  height: auto;
+  width: auto;
 }
 
 .fixed-nav .nav_part2 span {
@@ -991,7 +1010,7 @@ NAVIGATION CUSTOM START **/
 }
 
 .slider_wrap .slides .slide-content a {
-  color: var(--point-color);
+  color: var(--text-color);
   width: max-content;
   padding: 10px 20px;
   margin-top: 15px;
@@ -1000,7 +1019,7 @@ NAVIGATION CUSTOM START **/
   font-weight: 600;
   letter-spacing: 0.01em;
   background: rgba(255, 255, 255, 0.5);
-  border: 1px solid color-mix(in srgb, var(--point-color) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--point-color) 100%, transparent);
 }
 
 .slider_wrap .slides ul {
@@ -1017,7 +1036,7 @@ NAVIGATION CUSTOM START **/
   border: 1px solid var(--point-color);
   padding: 10px 25px;
   border-radius: 20px;
-  color: #fefcf6;
+  color: var(--text-color);
   font-weight: 700;
   letter-spacing: 0.01em;
 }
